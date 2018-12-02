@@ -43,7 +43,7 @@ Finally, type `make`
 - launch as many time you want a game client "./r-type_client ip" where ip is the server Ip
 
 # Protocol documentation:
-	-Protocol rfc in directory "Docs/Communication_Protocol_Rtype"
+- Protocol rfc in directory "Docs/Communication_Protocol_Rtype"
 # Architecture:
 
 Game Engine graphical classes:   
