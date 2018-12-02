@@ -5,9 +5,17 @@ game.
 
 # Install the dependencies:
 
-### Install Conan:
-   Windows / Unix: https://docs.conan.io/en/latest/installation.html
-   
+### Linux Installation:
+   -Install Conan: https://docs.conan.io/en/latest/installation.html
+   -Install CMake: https://cmake.org/install/
+   -Install Automake : Try "sudo apt-get install automake" or http://archive.linuxfromscratch.org/lfs-museum/5.1-pre1/LFS-BOOK-5.1-PRE1-HTML/chapter06/automake.html
+   -Install m4 : https://geeksww.com/tutorials/libraries/m4/installation/installing_m4_macro_processor_ubuntu_linux.php
+   -Install libtool : https://www.gnu.org/software/libtool/
+
+### Windows Installation:
+   -Install Conan: https://docs.conan.io/en/latest/installation.html
+   -Install CMake: https://cmake.org/install/
+
 ### Install all the dependencies:
    - Go to the root directory "CPP_rtype_2018".
    - Add the remotes:
@@ -35,7 +43,7 @@ Finally, type `make`
 	-launch as many time you want a game client "./r-type_client ip" where ip is	the server Ip
 
 # Protocol documentation:
-	![Protocol Documentation](Docs/Communication_Protocol_Rtype)
+	-Protocol rfc in directory "Docs/Communication_Protocol_Rtype"
 # Architecture:
 
 Game Engine graphical classes:   
@@ -50,17 +58,17 @@ Menu creator classes:
 Threads abstraction classes:   
 ![Threads](Docs/ThreadUML.png)   
 
-Game server abstraction classes:
+Game server abstraction classes:   
 ![GameServer](Docs/GameServer.png)   
 
-Server Architecture:
-![ServerUML](Docs/Server.png)
+Server Architecture:   
+![ServerUML](Docs/Server.png)   
 
-Client Architecture:
-![ClientUML](Docs/Client.png)
+Client Architecture:   
+![ClientUML](Docs/Client.png)   
 
-Network Common Parts:
-![NetworkUML](Docs/Network.png)
+Network Common Parts:   
+![NetworkUML](Docs/Network.png)   
 
 # Authors:
 Aziz Chigri - Benjamin Chadelaud - Thibaud Salsa

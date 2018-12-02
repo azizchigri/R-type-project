@@ -10,7 +10,6 @@ have to run conan install first")
 endif()
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g3")
 
 include_directories(Headers)
 include_directories(${CMAKE_INCLUDE_PATH})
@@ -22,7 +21,6 @@ include_directories( ${Boost_INCLUDE_DIRS} )
 
 file(COPY Resources/arial.ttf DESTINATION ${CMAKE_BINARY_DIR}/bin)
 file(COPY Resources/menu.wav DESTINATION ${CMAKE_BINARY_DIR}/bin)
-file(COPY Resources/om.png DESTINATION ${CMAKE_BINARY_DIR}/bin)
 file(COPY Resources/player1.png DESTINATION ${CMAKE_BINARY_DIR}/bin)
 file(COPY Resources/player2.png DESTINATION ${CMAKE_BINARY_DIR}/bin)
 file(COPY Resources/player3.png DESTINATION ${CMAKE_BINARY_DIR}/bin)

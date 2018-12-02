@@ -19,6 +19,7 @@ _remote_endpoint(boost::asio::ip::address::from_string(ip), port)
 UdpConnection::UdpConnection(const std::string &ip, const int &port)
 {
 	_port = port;
+	_ip = ip;
 	_socket_udp.open(boost::asio::ip::udp::v4());
 	_socket_udp.set_option(boost::asio::socket_base::reuse_address(true));
 	_socket_udp.bind(boost::asio::ip::udp::endpoint
@@ -43,8 +44,6 @@ void UdpConnection::sendUdp(Packet::RtypePacket *packet)
 	boost::system::error_code err;
 	size_t written = socket.send_to(boost::asio::buffer(packet, sizeof
 	(Packet::RtypePacket)), remote_endpoint, 0 , err);
-	std::cout << "bits written: " << written  << std::endl;
-	std::cout << "send on port:" << _port << std::endl;
 	if (err) {
 		std::cout << "Error: " << err.message() << std::endl;
 		return;
