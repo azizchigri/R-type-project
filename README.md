@@ -38,9 +38,9 @@ Tap : `mkdir build && cd build && conan install .. -s compiler.libcxx=libstdc++1
 Finally, type `make`
 
 ### launch:
-	- Go to the directory "build/bin".
-	-launch "./r-type_server"
-	-launch as many time you want a game client "./r-type_client ip" where ip is	the server Ip
+- Go to the directory "build/bin".
+- launch "./r-type_server"
+- launch as many time you want a game client "./r-type_client ip" where ip is the server Ip
 
 # Protocol documentation:
 	-Protocol rfc in directory "Docs/Communication_Protocol_Rtype"
