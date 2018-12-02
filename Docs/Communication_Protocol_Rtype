@@ -1,0 +1,171 @@
+Rtype Group                                                     T. Salsa
+Request for Comments: 4242                                     A. Chigri
+Category: Informational                                     B. Chadelaud
+								 Epitech
+                                                           November 2018
+
+
+               RType Communication Protocol
+
+Status of This Memo
+
+     This document specifies an Internet protocol for the project Rtype
+     Distribution of this memo is unlimited.
+
+Copyright Notice
+
+     Copyright (C) Epitech (2018). All rights reserved.
+
+Table of Contents
+
+     1. Introduction ..................................................1
+     2. Message Exchange ..............................................2
+     3. Data Unit Format ..............................................3
+     4. Structur Format ...............................................4
+     4.a List of structures............................................4
+     5. List of RCP commands ..........................................5
+     5.a UDP ..........................................................5
+     5.b TCP ..........................................................5
+
+
+
+
+Salsa & Chigri & Chadelaud   Informational                      [Page 1]
+
+RFC 4242              RType Communication Protocol         November 2018
+
+
+1.      Introduction
+
+  This document describes how the RType Communication Protocol is used
+  over clients and server with UDP and TCP connection.
+
+
+Salsa & Chigri & Chadelaud   Informational                      [Page 2]
+RFC 4242              RType Communication Protocol         November 2018
+
+
+2.      Message Exchange
+
+  Messages will be send to all clients connected. Messages MUST be
+  binary.
+  Commands MUST be handled independently and in the same order as sent.
+
+
+                         Ask List All Rooms->TCP
+                  Client -------------------->> Server
+
+                          List All Rooms->TCP
+		  Client <<------------------ Server
+
+                              Ask Port UDP->TCP
+                  Client -------------------->> Server
+
+                              Join Room->TCP    
+                  Client --------------------->> Server
+
+                  	      Port UDP->TCP
+                  Client <<-------------------- Server
+
+                  	      Started Game->TCP
+                  Client <<-------------------- Server
+
+                             Start Game->TCP
+                  Client --------------------->> Server
+
+                             Background->UDP
+                  Client <<--------------------- Server
+
+                               Player->UDP      
+                  Client <<--------------------- Server
+
+                             Move/shoot->UDP    
+                  Client --------------------->> Server
+
+                               Player->UDP      
+                  Client <<--------------------- Server
+
+                               Logout->UDP      
+                  Client --------------------->> Server
+
+
+
+
+Salsa & Chigri & Chadelaud   Informational                      [Page 3]
+RFC 4242              RType Communication Protocol         November 2018
+
+
+3.      Data Unit Format
+
+     The data unit contains three fields:
+     An uint32_t type corresponding to the operation code to execute.
+     An uint32_t size that describes the total length of the data unit.
+     the client/server MUST successfully read that many bytes to be sure
+     the message is fully received, before processing the command.
+     The parameters of the command are in an uint8_t, knowing the code, 
+     you MUST cast body.
+     The maximum size of the body is 1024 bytes;
+
+
+
+
+Salsa & Chigri & Chadelaud   Informational                      [Page 4]
+RFC 4242              RType Communication Protocol         November 2018
+
+4.      Structures Format
+
+	struct RtypePacket {
+		uint32_t  type;
+		uint32_t size;
+		uint8_t  body[max_body_length];
+	};
+	Header Size 8 bits
+	max_body_length = 1024
+
+4.a     List of structures
+
+        struct roomData {
+	        char name[11];
+                unsigned int id;
+                unsigned int number_max_of_player;
+                unsigned int number_of_player;
+        };
+
+        struct room_list {
+                roomData rooms[10];
+        };
+
+        struct Port {
+	        int port;
+        };
+
+
+
+
+Salsa & Chigri & Chadelaud   Informational                      [Page 5]
+RFC 4242              RType Communication Protocol         November 2018
+
+5. List of RCP commands
+
+5.a     UDP
+
+        [0] MOVERIGHT
+        [1] MOVELEFT
+        [2] MOVETOP
+        [3] MOVEDOWN
+        [4] MOVESTOP
+        [5] SHOOT
+        [6] BACKGROUND
+        [7] PLAYER
+
+5.b     TCP
+
+         [0] KO
+         [1] OK
+         [5] JOIN ROOM
+         [6] LEAVE ROOM
+         [8] START
+         [9] ASK UDP
+        [17] LIST ROOM
+        [20] SET UDP PORT
+        [30] GAME STARTED
