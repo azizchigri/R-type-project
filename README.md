@@ -6,15 +6,15 @@ game.
 # Install the dependencies:
 
 ### Linux Installation:
-   -Install Conan: https://docs.conan.io/en/latest/installation.html
-   -Install CMake: https://cmake.org/install/
-   -Install Automake : Try "sudo apt-get install automake" or http://archive.linuxfromscratch.org/lfs-museum/5.1-pre1/LFS-BOOK-5.1-PRE1-HTML/chapter06/automake.html
-   -Install m4 : https://geeksww.com/tutorials/libraries/m4/installation/installing_m4_macro_processor_ubuntu_linux.php
-   -Install libtool : https://www.gnu.org/software/libtool/
+   - Install Conan: https://docs.conan.io/en/latest/installation.html
+   - Install CMake: https://cmake.org/install/
+   - Install Automake : Try "sudo apt-get install automake" or http://archive.linuxfromscratch.org/lfs-museum/5.1-pre1/LFS-BOOK-5.1-PRE1-HTML/chapter06/automake.html
+   - Install m4 : https://geeksww.com/tutorials/libraries/m4/installation/installing_m4_macro_processor_ubuntu_linux.php
+   - Install libtool : https://www.gnu.org/software/libtool/
 
 ### Windows Installation:
-   -Install Conan: https://docs.conan.io/en/latest/installation.html
-   -Install CMake: https://cmake.org/install/
+   - Install Conan: https://docs.conan.io/en/latest/installation.html
+   - Install CMake: https://cmake.org/install/
 
 ### Install all the dependencies:
    - Go to the root directory "CPP_rtype_2018".
